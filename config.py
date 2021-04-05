@@ -191,6 +191,26 @@ configs = dict(
             xl = -10,
             xu = 10
         )
+    ),
+    StyleGAN2_my_model = dict(
+        task = "txt2img",
+        dim_z = 512,
+        latent = StyleGAN2LatentSpace,
+        model = StyleGAN2,
+        use_discriminator = True,
+        weights = "./stylegan2/weights/StyleGAN2_my_model",
+        algorithm = "nsga2",
+        norm = biggan_norm,
+        denorm = biggan_denorm,
+        pop_size = 16,
+        batch_size = 4,
+        problem_args = dict(
+            n_var = 512,
+            n_obj = 2,
+            n_constr = 512,
+            xl = -10,
+            xu = 10,
+        ),
     )
 )
 
